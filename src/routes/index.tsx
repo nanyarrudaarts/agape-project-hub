@@ -309,7 +309,7 @@ const statusDotClass: Record<Status, string> = {
   blocked: "bg-destructive",
 };
 
-const days = [
+const days: Array<{ label: string; date: number; muted?: boolean }> = [
   { label: "31", muted: true, date: 31 },
   ...Array.from({ length: 30 }, (_, index) => ({ label: String(index + 1), date: index + 1 })),
   { label: "1", muted: true, date: 101 },
@@ -320,7 +320,7 @@ const days = [
 
 function Index() {
   const [view, setView] = useState<View>("calendar");
-  const [selectedTask, setSelectedTask] = useState<HubTask | null>(tasks[7]);
+  const [selectedTask, setSelectedTask] = useState<HubTask | null>(tasks[7] ?? null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [query, setQuery] = useState("");
 
