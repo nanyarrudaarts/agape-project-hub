@@ -18,7 +18,7 @@ import {
   UsersRound,
   X,
 } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -640,7 +640,7 @@ function TimelineView() {
   );
 }
 
-function Panel({ title, children }: { title: string; children: React.ReactNode }) {
+function Panel({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="rounded-3xl border border-border bg-card p-5">
       <h3 className="mb-4 text-sm font-semibold text-foreground">{title}</h3>
@@ -741,7 +741,7 @@ function TaskDrawer({ open, task, onClose }: { open: boolean; task: HubTask | nu
   );
 }
 
-function DrawerField({ label, children }: { label: string; children: React.ReactNode }) {
+function DrawerField({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="block rounded-2xl border border-border bg-agape-paper p-4">
       <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{label}</span>
